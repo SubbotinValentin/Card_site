@@ -1,0 +1,62 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+{% block head %}
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'main/css/style.css' %}" type="text/css">
+    <title>{{ page }}</title>
+</head>
+{% endblock head %}
+<body>
+    <div class="main">
+    {% block menu %}
+    <!-- Начало header block  -->
+    <div class="header">
+        <div class="logo_header">
+            <a href="{% url 'home' %}"><img src="{% static 'main/images/logoMe.png' %}"></a>
+        </div>
+        {% for m in menu %}
+        <div class="nav">
+            <div class="nav_item">
+                <a href="{% url m.url_name %}">{{m.title}}</a>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+    <!-- Конец Header block -->
+    {% endblock menu %}
+
+    {% block content %}
+    
+
+
+    
+
+    {% endblock content %}
+
+    <!-- Начало footer block -->
+    <div class="footer">
+
+        <p class="footer_info">©2022 Subbotin Valentin prod.</p>
+
+        <div class="navi">
+            <div class="navi_link">
+                <a href="#"><img src="{% static 'main/images/git.png' %}"></a>
+            </div>
+            <div class="navi_link">
+                <a href="#"><img src="{% static 'main/images/vk.png' %}"></a>
+            </div>
+            <div class="navi_link">
+                <a href="#"><img src="{% static 'main/images/viber.png' %}"></a>
+            </div>
+            <div class="navi_link">
+                <a href="#"><img src="{% static 'main/images/telega.png' %}"></a>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

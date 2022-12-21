@@ -1,0 +1,27 @@
+{% extends 'main/base.html' %}
+{% load static %}
+
+{% block head %}
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'main/css/style_projects.css' %}" type="text/css">
+    <title>{{ page }}</title>
+{% endblock head %}
+
+{% block content %}
+    <!-- card start -->
+    {% for p in posts %}
+    <div class="container_card1">
+        <div class="card_img1">
+            <img src="{{ p.photo.url }}">
+        </div>
+        <div class="card-info1">
+            <p>{{ p.title }}</p>
+            <p>{{ p.content }}</p>
+            <a href="{{ p.get_absolute_url }}" class="btn">Читать статью</a>
+        </div>
+    </div>
+    {% endfor %}
+    <!-- card end -->
+{% endblock content %}
