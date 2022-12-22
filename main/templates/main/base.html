@@ -6,7 +6,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{% static 'main/css/style.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'main/css/style_index.css' %}" type="text/css">
     <title>{{ page }}</title>
 </head>
 {% endblock head %}
@@ -25,6 +25,15 @@
             </div>
         </div>
         {% endfor %}
+        <div class="nav">
+            <div class="nav_item">
+                {% if request.user.is_authenticated %}
+                <p>{{user.username}} | <a href="{% url 'logout' %}">Выйти</a></p>
+                {% else %}
+                <a href="{% url 'register' %}">Регистрация</a> | <a href="{% url 'login' %}">Войти</a>
+                {% endif %}
+            </div>
+        </div>
     </div>
     <!-- Конец Header block -->
     {% endblock menu %}
@@ -36,6 +45,19 @@
     
 
     {% endblock content %}
+
+
+        <nav class="list-pages">
+            {% for p in paginator.page_range %}
+            {% if page_obj.number == p %}
+            <li class="page-num page-num-selected">{{ p }}</li>
+            {% elif p >= page_obj.number|add:-2 and p <= page_obj.number|add:2  %}
+            <li class="page-num">
+                <a href="?page={{ p }}">{{ p }}</a>
+            </li>
+            {% endif %}
+            {% endfor %}
+        </nav>
 
     <!-- Начало footer block -->
     <div class="footer">

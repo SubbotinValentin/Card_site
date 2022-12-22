@@ -14,11 +14,14 @@
     {% for p in posts %}
     <div class="card1">
         <div class="card1_img">
-            <img src="" alt="No foto">
+            {% if p.photo %}
+            <img src="{{ p.photo.url }}" alt="No foto">
+            {% endif %}
         </div>
         <div class="card1_info">
-            <p>Задачи по алгоритмам</p>
-            <p>Незнаю что и придумать пока просто текста</p>
+            <p>{{ p.title }}</p>
+            <p>{{ p.content }}</p>
+            <a href="{{ p.get_absolute_url }}" class="btn">Читать статью</a>
         </div>
     </div>
 

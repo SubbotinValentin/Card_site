@@ -4,10 +4,10 @@ from .models import *
 
 @admin.register(Works)
 class WorksAdmin(admin.ModelAdmin):
-    list_display = ('id', 'title', 'time_create', 'photo')
+    list_display = ('id', 'title', 'time_create', 'photo', 'cat')
     list_display_links = ('id', 'title')
     search_fields = ('title', 'content')
-    list_filter = ('time_create',)
+    list_filter = ('time_create', 'cat')
     prepopulated_fields = {'slug': ('title',)}
 
 

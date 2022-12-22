@@ -16,13 +16,13 @@ class Category(models.Model):
 
 
 class Works(models.Model):
-    title = models.CharField(max_length=250)
+    title = models.CharField(max_length=250, verbose_name="Заголовок")
     slug = models.SlugField(max_length=250, unique=True, db_index=True, verbose_name='URL')
-    content = models.TextField(blank=True)
-    photo = models.ImageField(upload_to="photos/%Y/%m/%d/", blank=True)
-    time_create = models.DateTimeField(auto_now_add=True)
-    time_update = models.DateTimeField(auto_now=True)
-    cat = models.ForeignKey(Category, on_delete=models.CASCADE)
+    content = models.TextField(blank=True, verbose_name="Текст статьи")
+    photo = models.ImageField(upload_to="photos/%Y/%m/%d/", blank=True, null=True, verbose_name="Фото")
+    time_create = models.DateTimeField(auto_now_add=True, verbose_name="Время создания")
+    time_update = models.DateTimeField(auto_now=True, verbose_name="Время изменения")
+    cat = models.ForeignKey(Category, on_delete=models.CASCADE, verbose_name="Категории")
 
     class Meta:
         ordering = ['title']
