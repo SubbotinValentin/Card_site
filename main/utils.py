@@ -15,5 +15,5 @@ class DataMixin:
         if not self.request.user.is_authenticated:
             user_menu.pop(3)
 
-        context['menu'] = menu
+        context['menu'] = user_menu
         return context
