@@ -1,162 +1,147 @@
-.body {
+body {
     margin: 0;
+    background-color: #151311;
 }
 
-.main {
-    height: 100%;
-    width: 100%;
-    color: black;
-    background-color: white;
+header {
+    background-color: black;
 }
 
 a {
     outline: none;
     text-decoration: none;
-    color:black;
+    color: #cb8e39;
 }
 
 a:hover {
-    color: blue;
     text-decoration: underline;
 }
 
+ul {
+    list-style-type: none;
+}
 
-/* header start */
-.header {
+/* start header */
+.container {
     display: flex;
-    justify-content: space-around;
-    padding: 0 80px 50px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.container_header {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 1000px;
+    height: 100px;
+    padding: 0 20px;
+}
+
+.logo_image {
+    position: relative;
+    width: 100px;
+    height: 100px;    
+}
+
+.container_nav {
+    position: relative;
+    padding: 0 40px;
+    font-family: 'Martian Mono', monospace;
+
 }
 
 .nav {
-    display: flex;
-    align-items: center;
-    padding: 50px;
-}
-
-.nav_item {
-    cursor: pointer;
-    font-size: 24px;
-}
-
-.nav_item:not(:last-child) {
-    margin-right: 250px;
-}
-/* header end */
-
-/* card start */
-.container {
-    display: flex;
-}
-
-.container_card1 {
-    display: flex;
-    justify-content: space-around;
-    align-items: stretch;
-    padding: 50px 80px;
-}
-
-.card_img1 { 
-    position: relative;
-    padding: 50px;
-  }
-
-.card-info1 { 
-    position: relative;
-    padding: 50px;
-    font-size: 18px;
-    font-weight: 500;
-    height: 604px;
-    text-align: center;
-  }
-
-.container_card2 {
-    display: flex;
-    flex-direction: row-reverse;
-    justify-content: space-around;
-    align-items: stretch;
-    padding: 20px 80px;
-}
-
-.card_img2 {
-    position: relative;
-    padding: 50px;
-}
-
-.card-info2 {
-    position: relative;
-    padding: 50px;
-    font-size: 18px;
-    font-weight: 500;
-    height: 604px;
-    text-align: center;
-}
-
-.btn {
-    display: inline-block;
-    background: blue;
-    color: white;
-    padding: 1rem 1.5rem;
+    font-size: 15px;
+    font-weight: 600;
+    color: #cb8e39;
     text-decoration: none;
-    border-radius: 3px;
+    text-transform: uppercase;
 }
-/* card end */
+
+.container_account {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 300px;
+    height: 100px;
+}
+
+.nav_account {
+    font-size: 15px;
+    font-weight: 600;
+    color: #cb8e39;
+    text-decoration: none;
+    text-transform: uppercase;
+    padding: 0 10px;
+    font-family: 'Martian Mono', monospace;
+}
+/* end header */
+
+/* start content */
 
 .list-pages {
-	text-align: center;
-	margin: 0 0 20px 0;
+    text-align: center;
+    margin: 0 0 20px 0;
 }
+
 .list-pages ul {
 	margin: 20px 0 0 0;
 	padding: 0;
 	list-style: none;
 }
+
 .list-pages ul li {
 	display: inline-block;
 	margin: 0 20px 0 0;
 }
+
 .list-pages a {
 	color: #000;
-	font-size: 24px;
+	font-size: 20px;
 	text-decoration: none;
 }
 .list-pages .page-num, .page-num-selected {
 	display: inline-block;
-	width: 60px;
-	height: 44px;
+	width: 55px;
+	height: 40px;
 	padding: 16px 0 0 0;
-	border: 1px solid #d0d0d0;
+	border: 1px solid #cb8e39;
 	border-radius: 30px;
 }
 .list-pages .page-num:hover {
-	box-shadow: 3px 3px 1px #d0d0d0;
+	box-shadow: 3px 3px 1px #cb8e39; 
 }
 .list-pages .page-num-selected {
 	border: none;
 	color: #000;
-	font-size: 20px;
+	font-size: 15px;
 }
 .list-pages .page-num-selected:hover {
-	box-shadow: none;
+	box-shadow: none; 
 }
 
-/* footer start */
-.footer {
+/* end content */
+
+/* start footer */
+.container_footer {
     display: flex;
     justify-content: space-between;
-    padding: 50px 80px;
+    padding: 20px 20px;
+    color: #cb8e39;
 }
 
-.footer_info {
-    font-size: 16px;
-    font-weight: 500;
-}
-
-.navi {
+.footer_src {
     display: flex;
+    align-items: center;
 }
 
-.navi_link {
-    padding-right: 15px;
+.nav {
+    padding: 0 10px;
 }
-/* footer end */
+
+.nav_logo {
+    position: relative;
+    width: 25px;
+    height: 25px;
+}
+/* end footer */

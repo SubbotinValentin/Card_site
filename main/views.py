@@ -22,6 +22,17 @@ class IndexHome(DataMixin, ListView):
         return dict(list(context.items()) + list(c_def.items()))
 
 
+class AboutHome(DataMixin, ListView):
+    model = Category
+    template_name = 'main/about.html'
+
+    def get_context_data(self, *, object_list=None, **kwargs):
+        context = super().get_context_data(**kwargs)
+        c_def = self.get_user_context()
+        context['page'] = 'Главная'
+        return dict(list(context.items()) + list(c_def.items()))
+
+
 # def index(request):
 #     context = {
 #         'page': 'Главная',
@@ -42,7 +53,7 @@ class ProjectsHome(DataMixin, ListView):
         return dict(list(context.items()) + list(c_def.items()))
 
     def get_queryset(self):
-        return Works.objects.filter(cat_id=1)
+        return Works.objects.all()
 
 
 # def projects(request):
@@ -53,31 +64,6 @@ class ProjectsHome(DataMixin, ListView):
 #        'posts': posts,
 #    }
 #     return render(request, 'main/projects.html', context=context)
-
-
-class TasksHome(DataMixin, ListView):
-    model = Works
-    template_name = 'main/tasks.html'
-    context_object_name = 'posts'
-
-    def get_context_data(self, *, object_list=None, **kwargs):
-        context = super().get_context_data(**kwargs)
-        c_def = self.get_user_context()
-        context['page'] = 'Задачи'
-        return dict(list(context.items()) + list(c_def.items()))
-
-    def get_queryset(self):
-        return Works.objects.filter(cat_id=2)
-
-
-# def tasks(request):
-#     posts = Works.objects.filter(cat_id=2)
-#     context = {
-#         'page': 'Задачи',
-#         'menu': menu,
-#         'posts': posts,
-#     }
-#     return render(request, 'main/tasks.html', context=context)
 
 
 class ShowPost(DataMixin, DetailView):

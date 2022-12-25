@@ -1,159 +1,80 @@
 {% extends 'main/base.html' %}
 {% load static %}
 
+{% block menu %}
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'main/css/style_index.css' %}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Martian+Mono:wght@100;200;300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <title>{{page}}</title>
+{% endblock menu %}
+
 {% block content %}
-<!-- Начало title block -->
-<div class="title">
-    <div class="title_text">
-        <H1>Субботин Валентин Григорьевич</H1>
+<!-- start main -->
+<main>
+    <div class="container_main">
+        <div class="main_title">
+            <h1>Субботин Валентин Григорьевич</h1>
+        </div>
+        <div class="main_img">
+            <img class="main_img_image" src="{% static 'main/images/DSC07660.jpg' %}" alt="no foto">
+        </div>
+        <div class="main_info">
+            <ul>
+                <li>
+                    <h3>Возраст</h3>
+                </li>
+                <li>
+                    <h3>Пол</h3>
+                </li>
+            </ul>            
+        </div>
     </div>
-    <div class="title_info">
-        <p>Информация обо мне...
-            Мужчина-Близнецы – новатор, революционер, 
-            борец с серостью и предсказуемостью. 
-            Он любит нестандартные ходы, неожиданные решения, 
-            фантастические сюрпризы и яркие эмоции. 
-            Пульс жизни Близнецов всегда на пределе, 
-            при этом за внешней привлекательностью образа порой 
-            скрывается сложная и противоречивая натура, не терпящая 
-            ограничений, несвободы и малейшей рутины. 
-            Даже самая привлекательная в физическом плане женщина заставит 
-            Близнецов брезгливо отступить, если будет заподозрена 
-            в консервативности, стремлении к обыденности и отсутствии глубины.
-            Способность удивлять, быть разной и всесторонне развитой – вот ключи 
-            к сердцу типичного мужчины-Близнецов.
-            Больше всего на свете мужчина-Близнецы любит двусмысленные ситуации, 
-            интеллектуальные споры, неровные и 
-            сложные отношения – чтобы заинтересовать его, 
-            лучше всего показать характер и готовность участвовать в играх.
-            Женщина, не способная на интригующий флирт, приземленная и 
-            бесконфликтная, не представляет для него интереса. 
-            Среди Близнецов-мужчин много типичных Дон Жуанов, 
-            которым интересно пообщаться с разными женщинами, узнать их, 
-            коллекционировать, каждый раз добавляя что-то новое в свою копилку
-            ощущений. Отвергая шаблоны, они выступают против ограничений. 
-            Чтобы покорить такого мужчину, нужно отказаться от избитых фраз, 
-            показать свой интеллект и нестандартное мышление. 
-            Мужчины-Близнецы ценят в женщинах прежде всего мозги и чувство юмора.
-            Мужчина-Близнецы – новатор, революционер, 
-            борец с серостью и предсказуемостью. 
-            Он любит нестандартные ходы, неожиданные решения, 
-            фантастические сюрпризы и яркие эмоции. 
-            Пульс жизни Близнецов всегда на пределе, 
-            при этом за внешней привлекательностью образа порой 
-            скрывается сложная и противоречивая натура, не терпящая 
-            ограничений, несвободы и малейшей рутины.         
-        </p>
-    </div>
-    <div class="title_image">
-        <img src="{% static 'main/images/IMG-18.jpg' %}">
-    </div>
-</div>
-<!-- Конец title block  -->
+</main>
+<!-- end main -->
 
-<!-- Начало Info block -->
-<div class="content">
-    <div class="content_title">
-        <a href="#">About me</a>
-    </div>
-    <div class="content_info">
-        <p>Python – это универсальный язык, который используется для реализации разных задач. 
-            При желании его можно применять в разработке фронтенда, 
-            но в большинстве случаев целесообразнее писать код для внешней (клиентской) 
-            части программы на более подходящем языке, например, на JavaScript. 
-            Поэтому можно сказать, что Python – это язык для backend-разработки, 
-            поскольку он подходит именно для программирования на стороне сервера.
-            Backend-разработчик на Python – это специалист, который разрабатывает 
-            серверную (внутреннюю, скрытую) часть приложения, и отвечает за внутреннюю 
-            архитектуру, логику и взаимодействие с базами данных. 
-            Его главная цель – сделать так, чтобы сервисы понимали запросы, 
-            а сайты правильно реагировали на действия пользователей. 
-            Например, чтобы при нажатии кнопки товар добавлялся в корзину или заявка 
-            уходила на рассмотрение..
-        </p>
-    </div>
-</div>
-<!-- Конец Info block -->
-
-<!-- Начало Skill block -->
-<div class="skills">
-
-    <div class="skills_back">
-
-        <p class="back_dev">Backend developer</p>
-
-        <div class="back_python">
-            <div class="back_image">
-                <img src="{% static 'main/images/Python.png' %}">
-            </div>
-            <div class="back_title">
-                <p>Python</p>
-            </div>
-            <div class="back_level">
-                <img src="">
-                <img src="">
-                <img src="">
-                <img src="">
-                <img src="">
+<!-- start section -->
+<section>
+    <div class="container_section">
+        <div class="section_body">
+            <img class="section_body_image" src="{% static 'main/images/Python.png' %}" alt="No foto">
+            <div class="section_body_info">
+                <h5>Card title</h5>
+                <p>Some quick example text to build on the card title 
+                    and make up the bulk of the card's content.</p>
+                <a href="#" type="button" class="btn">Go somewhere</a>
             </div>
         </div>
-
-        <div class="back_django">
-            <div class="back_image">
-                <img src="{% static 'main/images/django.png' %}">
-            </div>
-            <div class="back_title">
-                <p>Django</p>
-            </div>
-            <div class="back_level">
-                <img src="">
-                <img src="">
-                <img src="">
-                <img src="">
-                <img src="">
+        <div class="section_body">
+            <img class="section_body_image" src="{% static 'main/images/Python.png' %}" alt="No foto">
+            <div class="section_body_info">
+                <h5>Card title</h5>
+                <p>Some quick example text to build on the card title 
+                    and make up the bulk of the card's content.</p>
+                <a href="#" type="button" class="btn">Go somewhere</a>
             </div>
         </div>
-
-    </div>
-
-    <div class="skills_front">
-
-        <p class="front_dev">Frontend developer</p>
-        
-        <div class="back_python">
-            <div class="back_image">
-                <img src="{% static 'main/images/Python.png' %}">
-            </div>
-            <div class="back_title">
-                <p>Python</p>
-            </div>
-            <div class="back_level">
-                <img src="">
-                <img src="">
-                <img src="">
-                <img src="">
-                <img src="">
+        <div class="section_body">
+            <img class="section_body_image" src="{% static 'main/images/Python.png' %}" alt="No foto">
+            <div class="section_body_info">
+                <h5>Card title</h5>
+                <p>Some quick example text to build on the card title 
+                    and make up the bulk of the card's content.</p>
+                <a href="#" type="button" class="btn">Go somewhere</a>
             </div>
         </div>
-
-        <div class="back_django">
-            <div class="back_image">
-                <img src="{% static 'main/images/django.png' %}">
-            </div>
-            <div class="back_title">
-                <p>Django</p>
-            </div>
-            <div class="back_level">
-                <img src="">
-                <img src="">
-                <img src="">
-                <img src="">
-                <img src="">
+        <div class="section_body">
+            <img class="section_body_image" src="{% static 'main/images/Python.png' %}" alt="No foto">
+            <div class="section_body_info">
+                <h5>Card title</h5>
+                <p>Some quick example text to build on the card title 
+                    and make up the bulk of the card's content.</p>
+                <a href="#" type="button" class="btn">Go somewhere</a>
             </div>
         </div>
     </div>
-    </div>
-</div>
-<!-- Конец skills block -->
-
+</section>
+<!-- end section -->
 {% endblock content %}

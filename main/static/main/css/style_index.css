@@ -1,236 +1,200 @@
-.body {
+body {
     margin: 0;
+    background-color: #151311;
 }
 
-.main {
-    height: 100%;
-    width: 100%;
-    color: black;
-    background-color: white;
+header {
+    background-color: black;
+}
+
+main {
+    background: linear-gradient(180deg, 
+    rgba(0,0,0,1) 5%, 
+    rgba(0,0,0,0) 50%, 
+    rgba(21,19,17,1) 95%), 
+    url(../images/golden-monstera-leaves-background-design-resource.jpg);
+    background-size: cover;
+    
 }
 
 a {
     outline: none;
     text-decoration: none;
-    color:black;
+    color: #cb8e39;
 }
 
 a:hover {
-    color: blue;
     text-decoration: underline;
 }
 
-/* header start */
-
-.header {
-    display: flex;
-    justify-content: space-around;
-    padding: 0px 80px 0px;
+ul {
+    list-style-type: none;
 }
 
-.logo_header {
+/* start header */
+.container {
     display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.container_header {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 1000px;
+    height: 100px;
+    padding: 0 20px;
+}
+
+.logo_image {
+    position: relative;
+    width: 100px;
+    height: 100px;    
+}
+
+.container_nav {
+    position: relative;
+    padding: 0 40px;
+    font-family: 'Martian Mono', monospace;
+
 }
 
 .nav {
+    font-size: 15px;
+    font-weight: 600;
+    color: #cb8e39;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+.container_account {
     display: flex;
+    justify-content: space-evenly;
     align-items: center;
-    padding: 50px;
+    width: 300px;
+    height: 100px;
 }
 
-.nav_item {
-    cursor: pointer;
-    font-size: 24px;
+.nav_account {
+    font-size: 15px;
+    font-weight: 600;
+    color: #cb8e39;
+    text-decoration: none;
+    text-transform: uppercase;
+    padding: 0 10px;
+    font-family: 'Martian Mono', monospace;
 }
+/* end header */
 
-.nav_item:not(:last-child) {
-    margin-right: 250px;
-}
 
-/* header end */
-
-/* title start */
-
-.title {
+/* start main */
+.container_main {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(2, 1fr);
-    box-sizing: content-box;
-    height: 570px;
-    padding: 70px 80px;
+    color: #cb8e39;
+    align-items: start;
+    justify-items: center;
+    padding: 50px 0;  
 }
 
-.title_text {
+.main_title {
+    grid-area: 1 / 1 / 2 / 2;
+    justify-self: start;
+    padding-left: 20px;
+}
+
+h1 {
+    font-size: 45px;
+}
+
+.main_img {
+    grid-area: 1 / 2 / 3 / 3;
+}
+
+.main_img_image {
+    border-radius: 20px;
+}
+
+.main_info {
+    grid-area: 2 / 1 / 3 / 2;
+    justify-self: start;
     position: relative;
-    font-size: 20px;
-    font-weight: 800;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    padding: 20px 0 20px 20px;
-    top: -50px;
+    line-height: 30px;
+    top: -200px;
+    left: -10px;
 }
 
-.title_image {
-    grid-column-start: 2;
-    grid-column-end: 3;
-    grid-row-start: 1;
-    grid-row-end: 2;
+/* end main */
+
+
+/* start section */
+.container_section {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 100%;
+    padding: 50px 0;
+    color: #cb8e39;
 }
 
-
-
-.title_info {
-    position: relative;
-    font-weight: 200;
-    padding: 0 20px;
-    top: -250px;
-}
-
-/* title end */
-
-/* Info start */
-
-.content {
+.section_body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 0 80px 50px;
+    width: 200px;
+    border: 4px solid #583919;
+    border-radius: 10px; 
+    
+    
 }
 
-.content_title {
-    font-size: 25px;
-    font-weight: 700;
-    box-sizing: content-box;
-    padding: 50px 0 50px 0 ;
+.section_body_image {
+    position: relative;
+    width: 100%;
+    height: 50%;
+    border-bottom: 4px solid #583919;
+    border-radius: 5px 5px 0 0;                              
+                  
 }
 
-.content_info {
-    font-size: 18px;
-    font-weight: 500;
+.section_body_info {
+    padding: 0 10px 10px;
+}
+
+.btn {
+    background-color: black;
+    ;
+    color: #cb8e39;
     text-align: center;
-    box-sizing: content-box;
-    height: 250px;
+    text-decoration: none;
+    padding: 5px 25px;
+    font-size: 16px;
+    border-radius: 3px;
 }
+/* end section */
 
-/* Info end */
-
-/* skills start */
-
-.skills {
-    display: flex;
-    justify-content: space-around;
-    padding: 50px 80px;
-}
-
-    /* skills back */
-.skills_back {
-    display: grid;
-    grid-template-columns: repeat(6, 1fr);
-    grid-template-rows: repeat(2, 1fr);
-    align-content: center;
-    align-items: center;
-    justify-items: center;
-}
-
-.back_dev {
-    grid-area: 1 / 1 / 2 / 7;
-    font-size: 20px;
-    font-weight: 700;
-    text-transform: uppercase;
-}
-
-.back_python {
-    grid-area: 2 / 1 / 3 / 2;
-    text-align: center;
-    font-size: 15px;
-    font-weight: 500;
-    text-transform: uppercase;
-}
-
-.back_django {
-    grid-area: 2 / 2 / 3 / 3;
-    text-align: center;
-    font-size: 15px;
-    font-weight: 500;
-    text-transform: uppercase;
-}
-
-    /* skills front */
-.skills_front {
-    display: grid;
-    grid-template-columns: repeat(6, 1fr);
-    grid-template-rows: repeat(2, 1fr);
-    align-content: center;
-    align-items: center;
-    justify-items: center;
-}
-
-.front_dev {
-    grid-area: 1 / 1 / 2 / 7;
-    font-size: 20px;
-    font-weight: 700;
-    text-transform: uppercase;
-}
-
-/* skills end */
-
-.list-pages {
-	text-align: center;
-	margin: 0 0 20px 0;
-}
-.list-pages ul {
-	margin: 20px 0 0 0;
-	padding: 0;
-	list-style: none;
-}
-.list-pages ul li {
-	display: inline-block;
-	margin: 0 20px 0 0;
-}
-.list-pages a {
-	color: #000;
-	font-size: 24px;
-	text-decoration: none;
-}
-.list-pages .page-num, .page-num-selected {
-	display: inline-block;
-	width: 60px;
-	height: 44px;
-	padding: 16px 0 0 0;
-	border: 1px solid #d0d0d0;
-	border-radius: 30px;
-}
-.list-pages .page-num:hover {
-	box-shadow: 3px 3px 1px #d0d0d0;
-}
-.list-pages .page-num-selected {
-	border: none;
-	color: #000;
-	font-size: 20px;
-}
-.list-pages .page-num-selected:hover {
-	box-shadow: none;
-}
-
-/* footer start */
-
-.footer {
+/* start footer */
+.container_footer {
     display: flex;
     justify-content: space-between;
-    padding: 50px 80px;
+    padding: 20px 20px;
+    color: #cb8e39;
 }
 
-.footer_info {
-    font-size: 16px;
-    font-weight: 500;
-}
-
-.navi {
+.footer_src {
     display: flex;
+    align-items: center;
 }
 
-.navi_link {
-    padding-right: 15px;
+.nav {
+    padding: 0 10px;
 }
 
-/* footer end */
+.nav_logo {
+    position: relative;
+    width: 25px;
+    height: 25px;
+}
+/* end footer */

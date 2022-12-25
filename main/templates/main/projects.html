@@ -2,11 +2,13 @@
 {% load static %}
 
 {% block head %}
-    <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{% static 'main/css/style_projects.css' %}" type="text/css">
-    <title>{{ page }}</title>
+    <link rel="stylesheet" href="{% static 'main/css/style_projects.css' %}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Martian+Mono:wght@100;200;300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <title>{{page}}</title>
 {% endblock head %}
 
 {% block content %}
@@ -26,4 +28,16 @@
     </div>
     {% endfor %}
     <!-- card end -->
+
+    <nav class="list-pages">
+        {% for p in paginator.page_range %}
+        {% if page_obj.number == p %}
+        <li class="page-num page-num-selected">{{ p }}</li>
+        {% elif p >= page_obj.number|add:-2 and p <= page_obj.number|add:2  %}
+        <li class="page-num">
+            <a href="?page={{ p }}">{{ p }}</a>
+        </li>
+        {% endif %}
+        {% endfor %}
+    </nav>
 {% endblock content %}

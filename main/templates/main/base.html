@@ -1,84 +1,133 @@
 {% load static %}
 <!DOCTYPE html>
 <html lang="en">
-{% block head %}
+{% block menu %}
 <head>
-    <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{% static 'main/css/style_index.css' %}" type="text/css">
-    <title>{{ page }}</title>
+    <link rel="stylesheet" href="{% static 'main/css/style_projects.css' %}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Martian+Mono:wght@100;200;300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <title>{{page}}</title>
 </head>
-{% endblock head %}
+{% endblock menu %}
 <body>
-    <div class="main">
-    {% block menu %}
-    <!-- Начало header block  -->
-    <div class="header">
-        <div class="logo_header">
-            <a href="{% url 'home' %}"><img src="{% static 'main/images/logoMe.png' %}"></a>
-        </div>
-        {% for m in menu %}
-        <div class="nav">
-            <div class="nav_item">
-                <a href="{% url m.url_name %}">{{m.title}}</a>
+
+<!-- start header -->
+<header>
+    <div class="container">
+        <div class="container_header">
+            <div class="container_logo">
+                <a href="{% url 'home' %}"><img class="logo_image" src="{% static 'main/images/LogoMe.png' %}" alt="no logo"></a>
+            </div>
+            <div class="container_nav">
+                <p class="nav"><a href="{% url 'home' %}">Главная</a></p>
+            </div>
+            <div class="container_nav">
+                <p class="nav"><a href="{% url 'projects' %}">Проекты</a></p>
+            </div>
+            <div class="container_nav">
+                <p class="nav"><a href="{% url 'about' %}">Информация</a></p>
             </div>
         </div>
-        {% endfor %}
-        <div class="nav">
-            <div class="nav_item">
-                {% if request.user.is_authenticated %}
-                <p>{{user.username}} | <a href="{% url 'logout' %}">Выйти</a></p>
-                {% else %}
-                <a href="{% url 'register' %}">Регистрация</a> | <a href="{% url 'login' %}">Войти</a>
-                {% endif %}
+        <div class="container_account">
+            <p class="nav_account"><a href="{% url 'register' %}">Регистрация</a></p>
+            <p class="nav_account"><a href="{% url 'login' %}">Войти</a></p>
+        </div>
+    </div>
+</header>
+<!-- end header -->
+
+
+{% block content %}
+<!-- start main -->
+<main>
+    <div class="container_main">
+        <div class="main_title">
+            <h1>Субботин Валентин Григорьевич</h1>
+        </div>
+        <div class="main_img">
+            <img class="main_img_image" src="{% static 'main/images/DSC07660.jpg' %}" alt="no foto">
+        </div>
+        <div class="main_info">
+            <ul>
+                <li>
+                    <h3>Возраст</h3>
+                </li>
+                <li>
+                    <h3>Пол</h3>
+                </li>
+            </ul>            
+        </div>
+    </div>
+</main>
+<!-- end main -->
+
+<!-- start section -->
+<section>
+    <div class="container_section">
+        <div class="section_body">
+            <img class="section_body_image" src="{% static 'main/images/Python.png' %}" alt="No foto">
+            <div class="section_body_info">
+                <h5>Card title</h5>
+                <p>Some quick example text to build on the card title 
+                    and make up the bulk of the card's content.</p>
+                <a href="#" type="button" class="btn">Go somewhere</a>
+            </div>
+        </div>
+        <div class="section_body">
+            <img class="section_body_image" src="{% static 'main/images/Python.png' %}" alt="No foto">
+            <div class="section_body_info">
+                <h5>Card title</h5>
+                <p>Some quick example text to build on the card title 
+                    and make up the bulk of the card's content.</p>
+                <a href="#" type="button" class="btn">Go somewhere</a>
+            </div>
+        </div>
+        <div class="section_body">
+            <img class="section_body_image" src="{% static 'main/images/Python.png' %}" alt="No foto">
+            <div class="section_body_info">
+                <h5>Card title</h5>
+                <p>Some quick example text to build on the card title 
+                    and make up the bulk of the card's content.</p>
+                <a href="#" type="button" class="btn">Go somewhere</a>
+            </div>
+        </div>
+        <div class="section_body">
+            <img class="section_body_image" src="{% static 'main/images/Python.png' %}" alt="No foto">
+            <div class="section_body_info">
+                <h5>Card title</h5>
+                <p>Some quick example text to build on the card title 
+                    and make up the bulk of the card's content.</p>
+                <a href="#" type="button" class="btn">Go somewhere</a>
             </div>
         </div>
     </div>
-    <!-- Конец Header block -->
-    {% endblock menu %}
+</section>
+<!-- end section -->
+{% endblock content %}
 
-    {% block content %}
-    
-
-
-    
-
-    {% endblock content %}
-
-
-        <nav class="list-pages">
-            {% for p in paginator.page_range %}
-            {% if page_obj.number == p %}
-            <li class="page-num page-num-selected">{{ p }}</li>
-            {% elif p >= page_obj.number|add:-2 and p <= page_obj.number|add:2  %}
-            <li class="page-num">
-                <a href="?page={{ p }}">{{ p }}</a>
-            </li>
-            {% endif %}
-            {% endfor %}
-        </nav>
-
-    <!-- Начало footer block -->
-    <div class="footer">
-
-        <p class="footer_info">©2022 Subbotin Valentin prod.</p>
-
-        <div class="navi">
-            <div class="navi_link">
-                <a href="#"><img src="{% static 'main/images/git.png' %}"></a>
+<!-- start footer -->
+<footer>
+    <div class="container_footer">
+        <p>Subbotin Valentin 2022 info site project.</p>
+        <div class="footer_src">
+            <div class="nav">
+                <a href=""><img class="nav_logo" src="{% static 'main/images/vk (1).png' %}" alt=""></a>
             </div>
-            <div class="navi_link">
-                <a href="#"><img src="{% static 'main/images/vk.png' %}"></a>
+            <div class="nav">   
+                <a href=""><img class="nav_logo" src="{% static 'main/images/telegram (1).png' %}" alt=""></a>
             </div>
-            <div class="navi_link">
-                <a href="#"><img src="{% static 'main/images/viber.png' %}"></a>
+            <div class="nav">
+                <a href=""><img class="nav_logo" src="{% static 'main/images/github (1).png' %}" alt=""></a>
             </div>
-            <div class="navi_link">
-                <a href="#"><img src="{% static 'main/images/telega.png' %}"></a>
+            <div class="nav">
+                <a href=""><img class="nav_logo" src="{% static 'main/images/gmail (1).png' %}" alt=""></a>
             </div>
         </div>
     </div>
-</div>
+</footer>
+<!-- end footer -->
 </body>
 </html>
