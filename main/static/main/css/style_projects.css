@@ -1,10 +1,20 @@
-body {
+body, html {
     margin: 0;
-    background-color: #151311;
+    background: linear-gradient(180deg, rgba(0,0,0,1) 5%, rgba(21,19,17,1) 20%);
+    height: 100vh;
 }
 
 header {
-    background-color: black;
+    background-color: rgba(0,0,0,1);
+}
+
+main {
+    background: linear-gradient(180deg, 
+    rgba(0,0,0,1) 0%, 
+    rgba(0,0,0,0) 50%, 
+    rgba(21,19,17,1) 100%), 
+    url(../images/golden-monstera-leaves-background-design-resource.jpg);
+    background-size: cover;
 }
 
 a {
@@ -15,10 +25,6 @@ a {
 
 a:hover {
     text-decoration: underline;
-}
-
-ul {
-    list-style-type: none;
 }
 
 /* start header */
@@ -34,7 +40,7 @@ ul {
     align-items: center;
     width: 1000px;
     height: 100px;
-    padding: 0 20px;
+    padding: 0 40px;
 }
 
 .logo_image {
@@ -60,10 +66,11 @@ ul {
 
 .container_account {
     display: flex;
-    justify-content: space-evenly;
+    justify-content: flex-end;
     align-items: center;
     width: 300px;
     height: 100px;
+    padding-right: 20px;
 }
 
 .nav_account {
@@ -78,55 +85,63 @@ ul {
 /* end header */
 
 /* start content */
+.container_content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px 0;
+}
 
-.list-pages {
+.container_content > div {
+    height: 250px;
+    width: 60%;
+}
+
+.container_card1 {
+    display: flex;
+    align-items: center;
+    padding: 40px 0;
+}
+
+.card_img1 {
     text-align: center;
-    margin: 0 0 20px 0;
+    background-color: #fff;
+    height: 250px;
+    width: 25%;
+    border: 5px solid black;
+    border-radius: 20px;
 }
 
-.list-pages ul {
-	margin: 20px 0 0 0;
-	padding: 0;
-	list-style: none;
+.card_img1 img {
+    width: 250px;
+    height: 250px;
+    border-radius: 20px;
 }
 
-.list-pages ul li {
-	display: inline-block;
-	margin: 0 20px 0 0;
+.card_body {
+    text-align: left;
+    width: 75%;
 }
 
-.list-pages a {
-	color: #000;
-	font-size: 20px;
-	text-decoration: none;
-}
-.list-pages .page-num, .page-num-selected {
-	display: inline-block;
-	width: 55px;
-	height: 40px;
-	padding: 16px 0 0 0;
-	border: 1px solid #cb8e39;
-	border-radius: 30px;
-}
-.list-pages .page-num:hover {
-	box-shadow: 3px 3px 1px #cb8e39; 
-}
-.list-pages .page-num-selected {
-	border: none;
-	color: #000;
-	font-size: 15px;
-}
-.list-pages .page-num-selected:hover {
-	box-shadow: none; 
+.card_info1 {
+    padding: 20px;
+    color: #cb8e39;
 }
 
+.card_url {
+    position: relative;
+    top: 30px;
+    padding: 50px 20px;
+    color: gold
+}
 /* end content */
 
 /* start footer */
 .container_footer {
     display: flex;
     justify-content: space-between;
-    padding: 20px 20px;
+    padding-top: 50px;
+    padding: 0 20px;
     color: #cb8e39;
 }
 

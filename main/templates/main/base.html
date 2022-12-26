@@ -1,17 +1,18 @@
 {% load static %}
 <!DOCTYPE html>
 <html lang="en">
-{% block menu %}
+{% block head %}
 <head>
+    <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{% static 'main/css/style_projects.css' %}">
+    <link rel="stylesheet" href="{% static 'main/css/style_index.css' %}">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Martian+Mono:wght@100;200;300;400;500;600;700;800&display=swap" rel="stylesheet">
-    <title>{{page}}</title>
+    <title>Главная</title>
 </head>
-{% endblock menu %}
+{% endblock %}
 <body>
 
 <!-- start header -->
@@ -19,7 +20,7 @@
     <div class="container">
         <div class="container_header">
             <div class="container_logo">
-                <a href="{% url 'home' %}"><img class="logo_image" src="{% static 'main/images/LogoMe.png' %}" alt="no logo"></a>
+                <a href="{% url 'home' %}"><img class="logo_image" src="{% static 'main/images/logoMe.png' %}" alt="no logo"></a>
             </div>
             <div class="container_nav">
                 <p class="nav"><a href="{% url 'home' %}">Главная</a></p>
@@ -39,74 +40,13 @@
 </header>
 <!-- end header -->
 
-
 {% block content %}
-<!-- start main -->
-<main>
-    <div class="container_main">
-        <div class="main_title">
-            <h1>Субботин Валентин Григорьевич</h1>
-        </div>
-        <div class="main_img">
-            <img class="main_img_image" src="{% static 'main/images/DSC07660.jpg' %}" alt="no foto">
-        </div>
-        <div class="main_info">
-            <ul>
-                <li>
-                    <h3>Возраст</h3>
-                </li>
-                <li>
-                    <h3>Пол</h3>
-                </li>
-            </ul>            
-        </div>
-    </div>
-</main>
-<!-- end main -->
 
-<!-- start section -->
-<section>
-    <div class="container_section">
-        <div class="section_body">
-            <img class="section_body_image" src="{% static 'main/images/Python.png' %}" alt="No foto">
-            <div class="section_body_info">
-                <h5>Card title</h5>
-                <p>Some quick example text to build on the card title 
-                    and make up the bulk of the card's content.</p>
-                <a href="#" type="button" class="btn">Go somewhere</a>
-            </div>
-        </div>
-        <div class="section_body">
-            <img class="section_body_image" src="{% static 'main/images/Python.png' %}" alt="No foto">
-            <div class="section_body_info">
-                <h5>Card title</h5>
-                <p>Some quick example text to build on the card title 
-                    and make up the bulk of the card's content.</p>
-                <a href="#" type="button" class="btn">Go somewhere</a>
-            </div>
-        </div>
-        <div class="section_body">
-            <img class="section_body_image" src="{% static 'main/images/Python.png' %}" alt="No foto">
-            <div class="section_body_info">
-                <h5>Card title</h5>
-                <p>Some quick example text to build on the card title 
-                    and make up the bulk of the card's content.</p>
-                <a href="#" type="button" class="btn">Go somewhere</a>
-            </div>
-        </div>
-        <div class="section_body">
-            <img class="section_body_image" src="{% static 'main/images/Python.png' %}" alt="No foto">
-            <div class="section_body_info">
-                <h5>Card title</h5>
-                <p>Some quick example text to build on the card title 
-                    and make up the bulk of the card's content.</p>
-                <a href="#" type="button" class="btn">Go somewhere</a>
-            </div>
-        </div>
-    </div>
-</section>
-<!-- end section -->
-{% endblock content %}
+
+
+
+
+{% endblock %}
 
 <!-- start footer -->
 <footer>
@@ -114,16 +54,13 @@
         <p>Subbotin Valentin 2022 info site project.</p>
         <div class="footer_src">
             <div class="nav">
-                <a href=""><img class="nav_logo" src="{% static 'main/images/vk (1).png' %}" alt=""></a>
+                <a href="https://vk.com/valentinsubbotin"><img class="nav_logo" src="{% static 'main/images/vk (1).png' %}" alt=""></a>
             </div>
             <div class="nav">   
-                <a href=""><img class="nav_logo" src="{% static 'main/images/telegram (1).png' %}" alt=""></a>
+                <a href="https://t.me/SubbotinValentin"><img class="nav_logo" src="{% static 'main/images/telegram (1).png' %}" alt=""></a>
             </div>
             <div class="nav">
-                <a href=""><img class="nav_logo" src="{% static 'main/images/github (1).png' %}" alt=""></a>
-            </div>
-            <div class="nav">
-                <a href=""><img class="nav_logo" src="{% static 'main/images/gmail (1).png' %}" alt=""></a>
+                <a href="https://github.com/SubbotinValentin"><img class="nav_logo" src="{% static 'main/images/github (1).png' %}" alt=""></a>
             </div>
         </div>
     </div>

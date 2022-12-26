@@ -1,18 +1,19 @@
 {% extends 'main/base.html' %}
 {% load static %}
 
-{% block menu %}
+{% block head %}
+    <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{% static 'main/css/style_index.css' %}">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Martian+Mono:wght@100;200;300;400;500;600;700;800&display=swap" rel="stylesheet">
-    <title>{{page}}</title>
-{% endblock menu %}
+    <title>Главная</title>
+{% endblock %}
 
 {% block content %}
-<!-- start main -->
+<!-- start content -->
 <main>
     <div class="container_main">
         <div class="main_title">
@@ -22,14 +23,18 @@
             <img class="main_img_image" src="{% static 'main/images/DSC07660.jpg' %}" alt="no foto">
         </div>
         <div class="main_info">
-            <ul>
-                <li>
-                    <h3>Возраст</h3>
-                </li>
-                <li>
-                    <h3>Пол</h3>
-                </li>
-            </ul>            
+            <div>
+                <dl>
+                    <dt>Возраст</dt>
+                        <dd>
+                            27 лет
+                        </dd>
+                    <dt>Пол</dt>
+                        <dd>
+                            Мужской
+                        </dd>
+                </dl>
+            </div>            
         </div>
     </div>
 </main>
@@ -53,7 +58,7 @@
                 <h5>Card title</h5>
                 <p>Some quick example text to build on the card title 
                     and make up the bulk of the card's content.</p>
-                <a href="#" type="button" class="btn">Go somewhere</a>
+                <a href="#" class="btn">Go somewhere</a>
             </div>
         </div>
         <div class="section_body">
@@ -76,5 +81,5 @@
         </div>
     </div>
 </section>
-<!-- end section -->
-{% endblock content %}
+<!-- end content -->
+{% endblock %}

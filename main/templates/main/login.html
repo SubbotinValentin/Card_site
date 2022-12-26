@@ -5,24 +5,33 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{% static 'main/css/style_form.css' %}" type="text/css">
-    <title>{{ page }}</title>
-{% endblock head %}
+    <link rel="stylesheet" href="{% static 'main/css/style_form.css' %}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Martian+Mono:wght@100;200;300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <title>Проекты</title>
+{% endblock %}
 
 {% block content %}
-<h1>{{title}}</h1>
-
-<form method="post">
-    {% csrf_token %}
-
-<div class="form-error">{{ form.non_field_errors }}</div>
-
-{% for f in form %}
-<p><label class="form-label" for="{{ f.id_for_label }}">{{f.label}}: </label>{{ f }}</p>
-<div class="form-error">{{ f.errors }}</div>
-{% endfor %}
-
-    <button type="submit">Войти</button>
-</form>
-
+<!-- start content -->
+<main>
+    <div class="container_form">
+        <div class="form_header">
+            <h1>Войти</h1>
+        </div>
+        <div class="form_body">
+            <form method="post">
+                {% csrf_token %}
+                <div class="form-error">{{ form.non_field_errors }}</div>
+                {% for f in form %}
+                <label for="{{ f.id_for_label }}">{{f.label}}: </label>
+                <input type="text" id="{{ f.id_for_label }}" name="{{ f.id_for_label }}">
+                <div class="form-error">{{ f.errors }}</div>
+                {% endfor %}
+            </form>
+        </div>
+        <button type="submit">Войти</button>
+    </div>
+</main>
+<!-- end content -->
 {% endblock %}

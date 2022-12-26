@@ -1,96 +1,147 @@
-body {
+body, html {
     margin: 0;
+    background-color: rgba(21,19,17,1);
+    height: 100vh;
 }
 
-.main {
-    height: 100%;
-    width: 100%;
-    color: black;
-    background-color: white;
+header {
+    background-color: rgba(0,0,0,1);
+}
+
+main {
+    background: linear-gradient(180deg, 
+    rgba(0,0,0,1) 0%, 
+    rgba(0,0,0,0) 50%, 
+    rgba(21,19,17,1) 100%), 
+    url(../images/golden-monstera-leaves-background-design-resource.jpg);
+    background-size: cover;
+    height: 100vh;
 }
 
 a {
     outline: none;
     text-decoration: none;
-    color:black;
+    color: #cb8e39;
 }
 
 a:hover {
-    color: blue;
     text-decoration: underline;
 }
 
-/* header start */
-
-.header {
+/* start header */
+.container {
     display: flex;
-    justify-content: space-around;
-    padding: 0px 80px 0px;
+    justify-content: space-between;
+    align-items: center;
 }
 
-.logo_header {
+.container_header {
     display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 1000px;
+    height: 100px;
+    padding: 0 40px;
+}
+
+.logo_image {
+    position: relative;
+    width: 100px;
+    height: 100px;    
+}
+
+.container_nav {
+    position: relative;
+    padding: 0 40px;
+    font-family: 'Martian Mono', monospace;
+
 }
 
 .nav {
+    font-size: 15px;
+    font-weight: 600;
+    color: #cb8e39;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+.container_account {
     display: flex;
+    justify-content: flex-end;
     align-items: center;
-    padding: 50px;
+    width: 300px;
+    height: 100px;
+    padding-right: 20px;
 }
 
-.nav_item {
-    cursor: pointer;
-    font-size: 24px;
+.nav_account {
+    font-size: 15px;
+    font-weight: 600;
+    color: #cb8e39;
+    text-decoration: none;
+    text-transform: uppercase;
+    padding: 0 10px;
+    font-family: 'Martian Mono', monospace;
+}
+/* end header */
+
+/* start content */
+.container_form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
-.nav_item:not(:last-child) {
-    margin-right: 250px;
+.container_form button {
+    position: relative;
+    margin-left: 235px;
+    margin-top: 20px;
+    width: 150px;
 }
 
-/* header end */
+.form_header {
+    position: relative;
+    padding: 20px;
+    color: #cb8e39;
+}
 
+.form_body {
+    padding: 20px;
+    color: #cb8e39;
+}
 
-.form-input {
+.form_body label {
+    display: inline-block;
+    min-width: 70px;
+}
+
+.form_body input {
     width: 300px;
     font-size: 16px;
 }
+/* end content */
 
-.form-label {
-    display: inline-block;
-    min-width: 150px;
-    vertical-align: top;
-}
-
-.form-error ul {
-    list-style: none;
-    padding: 0;
-    color: #CC0000;
-}
-
-.form-button {
-    min-width: 200px;
-    font-size: 16px;
-}
-
-/* footer start */
-
-.footer {
+/* start footer */
+.container_footer {
     display: flex;
     justify-content: space-between;
-    padding: 50px 80px;
+    padding-top: 50px;
+    padding: 0 20px;
+    color: #cb8e39;
 }
 
-.footer_info {
-    font-size: 16px;
-    font-weight: 500;
-}
-
-.navi {
+.footer_src {
     display: flex;
+    align-items: center;
 }
 
-.navi_link {
-    padding-right: 15px;
+.nav {
+    padding: 0 10px;
 }
 
-/* footer end */
+.nav_logo {
+    position: relative;
+    width: 25px;
+    height: 25px;
+}
+/* end footer */

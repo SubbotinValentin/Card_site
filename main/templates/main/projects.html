@@ -2,28 +2,34 @@
 {% load static %}
 
 {% block head %}
+    <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{% static 'main/css/style_projects.css' %}">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Martian+Mono:wght@100;200;300;400;500;600;700;800&display=swap" rel="stylesheet">
-    <title>{{page}}</title>
-{% endblock head %}
+    <title>Проекты</title>
+{% endblock %}
 
 {% block content %}
-    <!-- card start -->
+<!-- start content -->
+<main>
     {% for p in posts %}
-    <div class="container_card1">
-        <div class="card_img1">
-            {% if p.photo %}
-            <img src="{{ p.photo.url }}">
-            {% endif %}
-        </div>
-        <div class="card-info1">
-            <p>{{ p.title }}</p>
-            <p>{{ p.content }}</p>
-            <a href="{{ p.get_absolute_url }}" class="btn">Читать статью</a>
+    <div class="container_content">
+        <div class="container_card1">
+            <div class="card_img1">
+                <img src="{{ p.photo.url }}">
+            </div>
+            <div class="card_body">
+                <div class="card_info1">
+                    <h3>{{ p.title }}</h3>
+                    <p>{{ p.content }}</p>
+                </div>
+                <div class="card_url">
+                    <a href="{{ p.get_absolute_url }}" class="btn">Читать статью</a>
+                </div> 
+            </div>
         </div>
     </div>
     {% endfor %}
@@ -31,13 +37,15 @@
 
     <nav class="list-pages">
         {% for p in paginator.page_range %}
-        {% if page_obj.number == p %}
-        <li class="page-num page-num-selected">{{ p }}</li>
-        {% elif p >= page_obj.number|add:-2 and p <= page_obj.number|add:2  %}
-        <li class="page-num">
-            <a href="?page={{ p }}">{{ p }}</a>
-        </li>
-        {% endif %}
+            {% if page_obj.number == p %}
+            <li class="page-num page-num-selected">{{ p }}</li>
+            {% elif p >= page_obj.number|add:-2 and p <= page_obj.number|add:2  %}
+            <li class="page-num">
+                <a href="?page={{ p }}">{{ p }}</a>
+            </li>
+            {% endif %}
         {% endfor %}
     </nav>
-{% endblock content %}
+</main>
+<!-- end content -->
+{% endblock %}
