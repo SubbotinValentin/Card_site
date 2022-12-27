@@ -34,7 +34,7 @@ ul {
     align-items: center;
     width: 1000px;
     height: 100px;
-    padding: 0 20px;
+    padding: 0 40px;
 }
 
 .logo_image {
@@ -60,10 +60,16 @@ ul {
 
 .container_account {
     display: flex;
-    justify-content: space-evenly;
+    justify-content: flex-end;
     align-items: center;
     width: 300px;
     height: 100px;
+    padding-right: 20px;
+}
+
+.container_account img {
+    height: 50px;
+    width: 50px;
 }
 
 .nav_account {

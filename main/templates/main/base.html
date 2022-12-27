@@ -33,8 +33,13 @@
             </div>
         </div>
         <div class="container_account">
+            {% if request.user.is_authenticated %}
+            <img src="{% static 'main/images/account.png' %}" alt="">
+            <p class="nav_account"><a href="{% url 'logout' %}">Выйти</a></p>
+            {% else %} 
             <p class="nav_account"><a href="{% url 'register' %}">Регистрация</a></p>
             <p class="nav_account"><a href="{% url 'login' %}">Войти</a></p>
+            {% endif %}
         </div>
     </div>
 </header>

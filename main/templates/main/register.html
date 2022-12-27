@@ -9,7 +9,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Martian+Mono:wght@100;200;300;400;500;600;700;800&display=swap" rel="stylesheet">
-    <title>Проекты</title>
+    <title>{{page}}</title>
 {% endblock %}
 
 {% block content %}
@@ -23,13 +23,12 @@
             <form method="post">
                 {% csrf_token %}
                 {% for f in form %}
-                <label for="{{ f.id_for_label }}">{{f.label}}: </label>
-                <input type="text" id="login" name="login">
+                <p><label for="{{ f.id_for_label }}">{{f.label}}: </label>{{ f }}</p>
                 <div class="form-error">{{ f.errors }}</div>
                 {% endfor %}
+                <button type="submit">Регистрация</button>
             </form>
         </div>
-        <button type="submit" onclick="alert('Точно хочешь этого?')">Регистрация</button>
     </div>
 </main>
 <!-- end content -->
