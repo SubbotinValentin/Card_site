@@ -19,7 +19,9 @@
     <div class="container_content">
         <div class="container_card1">
             <div class="card_img1">
+                {% if p.photo %}
                 <img src="{{ p.photo.url }}">
+                {% endif %}
             </div>
             <div class="card_body">
                 <div class="card_info1">

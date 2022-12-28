@@ -12,26 +12,33 @@ from .utils import *
 
 
 class IndexHome(DataMixin, ListView):
-    model = Category
+    model = Skill
     template_name = 'main/index.html'
+    context_object_name = 'posts_skill'
 
     def get_context_data(self, *, object_list=None, **kwargs):
         context = super().get_context_data(**kwargs)
         c_def = self.get_user_context()
         context['page'] = 'Главная'
         return dict(list(context.items()) + list(c_def.items()))
+
+    def get_queryset(self):
+        return Skill.objects.all()
 
 
 class AboutHome(DataMixin, ListView):
-    model = Category
+    model = Skill
     template_name = 'main/about.html'
+    # context_object_name = 'posts_skill'
 
     def get_context_data(self, *, object_list=None, **kwargs):
         context = super().get_context_data(**kwargs)
         c_def = self.get_user_context()
-        context['page'] = 'Главная'
+        context['page'] = 'Информация'
         return dict(list(context.items()) + list(c_def.items()))
 
+    def get_queryset(self):
+        return Skill.objects.all()
 
 # def index(request):
 #     context = {
@@ -45,6 +52,7 @@ class ProjectsHome(DataMixin, ListView):
     model = Works
     template_name = 'main/projects.html'
     context_object_name = 'posts'
+    paginate_by = 3
 
     def get_context_data(self, *, object_list=None, **kwargs):
         context = super().get_context_data(**kwargs)
@@ -66,18 +74,30 @@ class ProjectsHome(DataMixin, ListView):
 #     return render(request, 'main/projects.html', context=context)
 
 
-class ShowPost(DataMixin, DetailView):
+class ShowPost_projects(DataMixin, DetailView):
     model = Works
-    template_name = 'main/post.html'
+    template_name = 'main/post_projects.html'
     slug_url_kwarg = 'post_slug'    #(pk_url_kwarg - для ключа(id))
-    context_object_name = 'post'
+    context_object_name = 'post_projects'
 
     def get_context_data(self, *, object_list=None, **kwargs):
         context = super().get_context_data(**kwargs)
         c_def = self.get_user_context()
-        context['page'] = context['post']
+        context['page'] = context['post_projects']
         return dict(list(context.items()) + list(c_def.items()))
 
+
+class ShowPost_skill(DataMixin, DetailView):
+    model = Skill
+    template_name = 'main/post_skill.html'
+    slug_url_kwarg = 'post_slug'    #(pk_url_kwarg - для ключа(id))
+    context_object_name = 'post_skill'
+
+    def get_context_data(self, *, object_list=None, **kwargs):
+        context = super().get_context_data(**kwargs)
+        c_def = self.get_user_context()
+        context['page'] = context['post_skill']
+        return dict(list(context.items()) + list(c_def.items()))
 
 # def show_post(request, post_slug):
 #     post = get_object_or_404(Works, slug=post_slug)

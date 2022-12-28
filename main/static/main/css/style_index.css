@@ -132,13 +132,25 @@ h1 {
 
 
 /* start section */
+
+.container_title {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.section_title {
+    color: #cb8e39;
+    font-size: 20px;
+}
+
 .container_section {
     display: flex;
-    justify-content: space-around;
-    align-items: center;
     height: 100%;
     padding: 70px 20px;
     color: #cb8e39;
+    flex-wrap: wrap;
+    width: auto;
 }
 
 .section_body {
@@ -146,16 +158,18 @@ h1 {
     flex-direction: column;
     align-items: center;
     width: 200px;
+    height: 360px;
     border: 4px solid #583919;
     border-radius: 10px; 
-    
+    margin-right: 20px;
+    margin-left: 20px;
     
 }
 
 .section_body_image {
     position: relative;
     width: 100%;
-    height: 50%;
+    height: 60%;
     border-bottom: 4px solid #583919;
     border-radius: 5px 5px 0 0;                              
                   
@@ -163,6 +177,8 @@ h1 {
 
 .section_body_info {
     padding: 0 10px 10px;
+    text-align: center;
+    height: 40%;
 }
 
 .btn {

@@ -25,7 +25,7 @@ class Works(models.Model):
     cat = models.ForeignKey(Category, on_delete=models.CASCADE, verbose_name="Категории")
 
     class Meta:
-        ordering = ['title']
+        ordering = ['id']
         verbose_name = 'Работа'
         verbose_name_plural = 'Работы'
 
@@ -33,4 +33,25 @@ class Works(models.Model):
         return self.title
 
     def get_absolute_url(self):
-        return reverse('post', kwargs={'post_slug': self.slug})
+        return reverse('post_projects', kwargs={'post_slug': self.slug})
+
+
+class Skill(models.Model):
+    title = models.CharField(max_length=250, verbose_name="Заголовок")
+    slug = models.SlugField(max_length=250, unique=True, db_index=True, verbose_name='URL')
+    content = models.TextField(blank=True, verbose_name="Текст статьи")
+    photo = models.ImageField(upload_to="photos/%Y/%m/%d/", blank=True, null=True, verbose_name="Фото")
+    time_create = models.DateTimeField(auto_now_add=True, verbose_name="Время создания")
+    time_update = models.DateTimeField(auto_now=True, verbose_name="Время изменения")
+    cat = models.ForeignKey(Category, on_delete=models.CASCADE, verbose_name="Категории")
+
+    class Meta:
+        ordering = ['id']
+        verbose_name = 'Знаний'
+        verbose_name_plural = 'Знания'
+
+    def __str__(self):
+        return self.title
+
+    def get_absolute_url(self):
+        return reverse('post_skill', kwargs={'post_slug': self.slug})
