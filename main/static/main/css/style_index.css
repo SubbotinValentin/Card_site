@@ -4,6 +4,12 @@ body {
     height: 100vh;
 }
 
+h1, h2, h3, p {
+    font-family: East Sea Dokdo;
+    letter-spacing: 1px;
+    font-size: 15px;
+}
+
 header {
     background-color: black;
 }
@@ -43,11 +49,11 @@ a:hover {
     padding: 0 40px;
 }
 
-.logo_image {
+/* .logo_image {
     position: relative;
     width: 100px;
     height: 100px;    
-}
+} */
 
 .container_nav {
     position: relative;
@@ -79,13 +85,13 @@ a:hover {
 }
 
 .nav_account {
+    font-family: East Sea Dokdo;
     font-size: 15px;
     font-weight: 600;
     color: #cb8e39;
     text-decoration: none;
     text-transform: uppercase;
     padding: 0 10px;
-    font-family: 'Martian Mono', monospace;
 }
 /* end header */
 
@@ -124,8 +130,31 @@ h1 {
     justify-self: start;
     position: relative;
     line-height: 30px;
-    padding: 0 60px;
-    top: -200px;
+    padding: 0 40px;
+    top: -500px;
+}
+
+.main_info_head {
+    display: flex;
+    flex-direction: column;
+}
+
+.main_info_head div {
+    border: 5px solid #583919;
+    border-radius: 30px;
+    padding: 10px 20px;
+    margin-top: 20px;
+
+}
+
+.main_info_head h3 {
+    color: white;
+    font-size: 20px;
+}
+
+.main_info_head p {
+    padding-left: 150px;
+    color: white;
 }
 
 /* end main */
@@ -142,6 +171,10 @@ h1 {
 .section_title {
     color: #cb8e39;
     font-size: 20px;
+}
+
+.section_title h2 {
+    font-size: 25px;
 }
 
 .container_section {
@@ -183,12 +216,11 @@ h1 {
 
 .btn {
     background-color: black;
-    ;
     color: #cb8e39;
     text-align: left;
     text-decoration: none;
     padding: 5px 25px;
-    font-size: 16px;
+    font-size: 15px;
     border-radius: 5px;
     margin: 15px;
 }
